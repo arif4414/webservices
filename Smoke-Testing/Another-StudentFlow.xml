@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="f7cbdf60-5a4e-4579-a6dc-17c03b134b8c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Another-StudentFlow" searchProperties="true" timeout="0">
+  <con:settings id="69c14eac-fc2e-4cf4-90ef-55b03384a072">
+    <con:setting id="f7cbdf60-5a4e-4579-a6dc-17c03b134b8cfileName">Another-StudentFlow</con:setting>
+  </con:settings>
+  <con:testStep type="calltestcase" name="Run Test Case" id="08da8d7e-026a-45d0-8c01-1429609e7aba">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RunTestCaseStep">
+      <con:targetTestCase>23df2452-9d04-469b-8d9f-b51cbab361d4</con:targetTestCase>
+      <con:properties>
+        <con:property>
+          <con:name>First_Name</con:name>
+          <con:value>hello</con:value>
+        </con:property>
+      </con:properties>
+      <con:returnProperties>
+        <con:entry>First_Name</con:entry>
+      </con:returnProperties>
+      <con:runMode>PARALLELL</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

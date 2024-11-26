@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="e0bf2057-a641-4846-8b45-b8f6b7f5403c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="GET-student-DB-Datasource" searchProperties="true" timeout="0">
+  <con:settings id="13893ebe-dfe3-4fcb-8bd4-96a9c60581cf">
+    <con:setting id="IncludeOverview">true</con:setting>
+    <con:setting id="IncludeResults">true</con:setting>
+    <con:setting id="FlowLayout">false</con:setting>
+    <con:setting id="ErrorDetails">true</con:setting>
+    <con:setting id="IncludeCoverage">true</con:setting>
+    <con:setting id="GeneratableAllureReport@Folder">C:\Users\user\Desktop\ready-api-related-reports</con:setting>
+    <con:setting id="e0bf2057-a641-4846-8b45-b8f6b7f5403cfileName">GET-student-DB-Datasource</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source-DB" id="b4337957-32d4-43fb-927a-a991cbd6e5f5">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:config xsi:type="con:DataSourceStep">
+      <con:dataSource type="Data Connection">
+        <con:configuration>
+          <Connection>TX-DB-Conn</Connection>
+          <query>Select studentId as studentId,
+  lname as lname
+From temp_student_id</query>
+          <fetchSize/>
+          <stored-procedure>false</stored-procedure>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>studentId</con:property>
+      <con:property>lname</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request" id="97514003-db73-4998-91a9-0ed9cfebeea7">
+    <con:settings/>
+    <con:config service="GET-StudentData" resourcePath="/api/studentsDetails/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request" id="d1655c1c-3bdf-4463-bc20-bb93d5edcc45" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://thetestingworldapi.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://thetestingworldapi.com/api/studentsDetails/5</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="ab21ffdc-000a-459b-b9c1-d458f2ceda70" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="93cd576c-1147-4c3b-9c54-06ca4357b3ac" name="Match content of [last_name]">
+          <con:configuration>
+            <path>$['data']['last_name']</path>
+            <content>${Data Source-DB#lname}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Data Source-DB#studentId}"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="b3461417-a461-463d-8d80-b0e4bf3e105c">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source-DB</dataSourceStep>
+      <targetStep>REST Request</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>b4337957-32d4-43fb-927a-a991cbd6e5f5</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>97514003-db73-4998-91a9-0ed9cfebeea7</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>b3461417-a461-463d-8d80-b0e4bf3e105c</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

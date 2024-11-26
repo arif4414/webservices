@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="POST-api-studentsDetails" path="/api/studentsDetails" id="890d4262-6f2a-4a0b-8039-7d4869450df7">
+  <con:settings id="1bfa0148-140a-4566-a856-ff9972573c4f">
+    <con:setting id="890d4262-6f2a-4a0b-8039-7d4869450df7fileName">POST-api-studentsDetails</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST-StudentDetails" id="be5c2858-dbd8-459a-9946-a8263edd8d67" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="f21cce14-3576-49ee-8328-c4c282f690e0" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://thetestingworldapi.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

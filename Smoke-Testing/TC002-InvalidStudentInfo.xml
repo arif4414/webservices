@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="6a5c58bd-5a9b-4ef7-a482-122fb2b96a64" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC002-InvalidStudentInfo" searchProperties="true" timeout="0" disabled="true">
+  <con:settings id="0328d4f0-1221-4e81-9d13-2db13bf81d40">
+    <con:setting id="6a5c58bd-5a9b-4ef7-a482-122fb2b96a64fileName">TC002-InvalidStudentInfo</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="InvalidStudent" id="453e9e85-afa9-4097-ae51-e759e983e0f0">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="RESTsamplePOST" resourcePath="/api/studentsDetails" methodName="POST-StudentDetails" xsi:type="con:RestRequestStep">
+      <con:restRequest name="InvalidStudent" id="f21cce14-3576-49ee-8328-c4c282f690e0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://thetestingworldapi.com</con:endpoint>
+        <con:request>{
+  "middle_name": "W",
+  "last_name": "World",
+}</con:request>
+        <con:originalUri>https://thetestingworldapi.com/api/studentsDetails</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

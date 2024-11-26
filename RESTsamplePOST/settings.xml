@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" xsi:type="con:RestService" id="b64b87e1-25df-42ca-8ca4-28aff1be29ec" name="RESTsamplePOST" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="86af3b20-6653-4cf3-a978-4c72d0c1cb5c">
+    <con:setting id="b64b87e1-25df-42ca-8ca4-28aff1be29ecfileName">RESTsamplePOST</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="RESTsamplePOST.json">
+    <con:part>
+      <con:url>RESTsamplePOST.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"RESTsamplePOST","description":"","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/api/studentsDetails":{"description":"","post":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://thetestingworldapi.com/api/studentsDetails</con:endpoint>
+  </con:endpoints>
+  <con:environmentSpec>
+    <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:interface>

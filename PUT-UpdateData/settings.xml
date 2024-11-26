@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" xsi:type="con:RestService" id="11acf43a-2494-499d-ae8f-5ee4054f7692" name="PUT-UpdateData" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="28fb4a9e-65a5-4894-9dcc-1baad81406af">
+    <con:setting id="11acf43a-2494-499d-ae8f-5ee4054f7692fileName">PUT-UpdateData</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="PUT-UpdateData.json">
+    <con:part>
+      <con:url>PUT-UpdateData.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"PUT-UpdateData","description":"","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/api/studentsDetails/{id}":{"description":"","put":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}},"parameters":[{"name":"id","in":"path","required":true}]}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://thetestingworldapi.com/api/studentsDetails/{id}</con:endpoint>
+  </con:endpoints>
+  <con:environmentSpec>
+    <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:interface>

@@ -1,0 +1,10 @@
+RESTsamplePOST\POST-api-studentsDetails.xml
+PUT-UpdateData\%7Bid%7D.xml
+GET-StudentData\%7Bid%7D.xml
+Smoke-Testing\E2E-StudentFlow.xml
+Smoke-Testing\TC002-InvalidStudentInfo.xml
+Smoke-Testing\TC003-GetStudentData.xml
+Smoke-Testing\TC004-UpdateStudentData.xml
+Smoke-Testing\Another-StudentFlow.xml
+Smoke-Testing\DataDriven-CreateStudent.xml
+Smoke-Testing\GET-student-DB-Datasource.xml

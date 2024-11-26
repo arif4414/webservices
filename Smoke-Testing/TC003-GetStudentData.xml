@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="4623fc19-7db3-41d6-a91e-d8f6c9e6dede" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC003-GetStudentData" searchProperties="true" timeout="0">
+  <con:settings id="8e1abec2-8666-4adc-98e0-512c8789d1ab">
+    <con:setting id="4623fc19-7db3-41d6-a91e-d8f6c9e6dedefileName">TC003-GetStudentData</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request" id="d55e2ae3-759c-4193-b1e9-49cd729dd14c">
+    <con:settings/>
+    <con:config service="GET-StudentData" resourcePath="/api/studentsDetails/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request" id="d1655c1c-3bdf-4463-bc20-bb93d5edcc45" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://thetestingworldapi.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://thetestingworldapi.com/api/studentsDetails/10496135</con:originalUri>
+        <con:assertion type="JsonPath Existence Match" id="bc01d77a-6746-4103-83cd-77190130314d" name="Check for existence of [id]">
+          <con:configuration>
+            <path>$[0]['id']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${#[Smoke Testing#TC001-AddNewStudent#Properties 1]#StudentId}"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="JDBC Request" id="9689e27d-39ac-4ce0-bdb9-02c73f5ff62f">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true">
+      <con:dbConnectionName>TX-DB-Conn</con:dbConnectionName>
+      <con:driver>com.mysql.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:mysql://127.0.0.1:3306/sys?user=root&amp;password=PASS_VALUE</con:connectionString>
+      <con:password>root</con:password>
+      <con:connectionProperties/>
+      <con:query>Select sys_config.variable,
+  sys_config.value
+From sys_config
+Where sys_config.variable = 'statement_truncate_len'</con:query>
+      <con:assertion type="JDBC Status" id="e457a21e-eb53-4229-b685-f8b9958ab2b2" name="JDBC Status"/>
+      <con:assertion type="MessageContentAssertion" id="33288ef0-e1a9-45ab-9160-f5851a9403ca" name="Message Content Assertion">
+        <con:configuration xsi:type="con:MessageContentAssertion">
+          <con:elements>
+            <con:xpath>//Results[1]/ResultSet[1]/@fetchSize</con:xpath>
+            <con:element>@fetchSize</con:element>
+            <con:type/>
+            <con:operator>=</con:operator>
+            <con:enabled>false</con:enabled>
+            <con:expectedValue>0</con:expectedValue>
+            <con:numberType>false</con:numberType>
+          </con:elements>
+          <con:elements>
+            <con:xpath>//Results[1]/ResultSet[1]/Row[1]/@rowNumber</con:xpath>
+            <con:element>@rowNumber</con:element>
+            <con:type/>
+            <con:operator>=</con:operator>
+            <con:enabled>false</con:enabled>
+            <con:expectedValue>1</con:expectedValue>
+            <con:numberType>false</con:numberType>
+          </con:elements>
+          <con:elements>
+            <con:xpath>//Results[1]/ResultSet[1]/Row[1]/SYS_CONFIG.VARIABLE[1]</con:xpath>
+            <con:element>SYS_CONFIG.VARIABLE</con:element>
+            <con:type xsi:nil="true"/>
+            <con:operator>=</con:operator>
+            <con:enabled>false</con:enabled>
+            <con:expectedValue>statement_truncate_len</con:expectedValue>
+            <con:numberType>false</con:numberType>
+          </con:elements>
+          <con:elements>
+            <con:xpath>//Results[1]/ResultSet[1]/Row[1]/SYS_CONFIG.VALUE[1]</con:xpath>
+            <con:element>SYS_CONFIG.VALUE</con:element>
+            <con:type xsi:nil="true"/>
+            <con:operator>=</con:operator>
+            <con:enabled>true</con:enabled>
+            <con:expectedValue>64</con:expectedValue>
+            <con:numberType>false</con:numberType>
+          </con:elements>
+          <con:originalMessage><![CDATA[<Results>
+   <ResultSet fetchSize="0">
+      <Row rowNumber="1">
+         <SYS_CONFIG.VARIABLE>statement_truncate_len</SYS_CONFIG.VARIABLE>
+         <SYS_CONFIG.VALUE>64</SYS_CONFIG.VALUE>
+      </Row>
+   </ResultSet>
+</Results>]]></con:originalMessage>
+        </con:configuration>
+      </con:assertion>
+      <con:properties/>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

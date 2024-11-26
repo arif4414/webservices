@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="f81b0798-3b74-458f-970c-a642aca1480e" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="DataDriven-CreateStudent" searchProperties="true" timeout="0">
+  <con:settings id="73f76502-a333-4170-bb58-c25641d8b998">
+    <con:setting id="f81b0798-3b74-458f-970c-a642aca1480efileName">DataDriven-CreateStudent</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="5a84e08a-5576-4e64-bb9d-715bd9f7c2a8">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataSourceStep">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/personal-one-drive/OneDrive/Documents/everything-related-to-job-interview/interview-preparation/soapUI - readyAPI/createStudent-dataSource.xlsx</file>
+          <worksheet/>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>fName</con:property>
+      <con:property>mName</con:property>
+      <con:property>lName</con:property>
+      <con:property>dob</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request" id="1031ecb4-aeeb-4cc2-844a-8d5f514b8876">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="RESTsamplePOST" resourcePath="/api/studentsDetails" methodName="POST-StudentDetails" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request" id="f21cce14-3576-49ee-8328-c4c282f690e0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://thetestingworldapi.com</con:endpoint>
+        <con:request>{
+  "first_name": "${Data Source#fName}",
+  "middle_name": "${Data Source#mName}",
+  "last_name": "${Data Source#lName}",
+  "date_of_birth": "${Data Source#dob}"
+}</con:request>
+        <con:originalUri>https://thetestingworldapi.com/api/studentsDetails</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="19039f29-4ee8-4de8-8287-ae97f55c2969" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="0847934d-6f4d-4012-b130-3f0f487ca116">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="e51db424-32aa-4566-a1f9-f26e4f327ebf">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer-1" id="4a892c4c-2e27-47f0-b109-35cf409757b3">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:PropertyTransfersStep">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>studentId</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>REST Request</con:sourceStep>
+        <con:sourcePath>$['id']</con:sourcePath>
+        <con:targetType>studentId</con:targetType>
+        <con:targetStep>Data Sink</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasink" name="Data Sink" id="04ac2388-25e1-4a36-b80e-d924876be131">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataSinkStep">
+      <con:dataSink type="Excel">
+        <con:configuration>
+          <file/>
+          <outfile>C:/personal-one-drive/OneDrive/Documents/everything-related-to-job-interview/interview-preparation/soapUI - readyAPI/createStudent-dataSource.xlsx</outfile>
+          <worksheet>Sheet1</worksheet>
+          <cell>E2</cell>
+          <evaluateFormulas>false</evaluateFormulas>
+          <append>false</append>
+        </con:configuration>
+      </con:dataSink>
+      <con:properties>
+        <con:property>
+          <con:name>studentId</con:name>
+          <con:value>10497841</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="b336eacf-4b9a-4864-aefb-5fd2c97dfbb3">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source</dataSourceStep>
+      <targetStep>REST Request</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
