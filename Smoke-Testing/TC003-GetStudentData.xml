@@ -111,10 +111,6 @@ Where sys_config.variable = 'statement_truncate_len'</con:query>
       <con:properties/>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="Property Transfer-test2-to-delete-later" id="69564168-9c97-4518-ac2b-860749b09829">
-    <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep"/>
-  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:environmentSpec>
