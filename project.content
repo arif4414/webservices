@@ -7,4 +7,3 @@ Smoke-Testing\TC003-GetStudentData.xml
 Smoke-Testing\TC004-UpdateStudentData.xml
 Smoke-Testing\Another-StudentFlow.xml
 Smoke-Testing\DataDriven-CreateStudent.xml
-Smoke-Testing\GET-student-DB-Datasource.xml

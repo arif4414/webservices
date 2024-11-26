@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" id="4623fc19-7db3-41d6-a91e-d8f6c9e6dede" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC003-GetStudentData" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="4623fc19-7db3-41d6-a91e-d8f6c9e6dede" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC003-GetStudentData" searchProperties="true" timeout="0">
   <con:settings id="e50199bb-feb4-400b-a32e-60e87b419a9f">
     <con:setting id="4623fc19-7db3-41d6-a91e-d8f6c9e6dedefileName">TC003-GetStudentData</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="REST Request" id="d55e2ae3-759c-4193-b1e9-49cd729dd14c">
     <con:settings/>
-    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="GET-StudentData" resourcePath="/api/studentsDetails/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+    <con:config service="GET-StudentData" resourcePath="/api/studentsDetails/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="REST Request" id="d1655c1c-3bdf-4463-bc20-bb93d5edcc45" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -45,7 +45,7 @@
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
-    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true">
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true">
       <con:dbConnectionName>TX-DB-Conn</con:dbConnectionName>
       <con:driver>com.mysql.jdbc.Driver</con:driver>
       <con:connectionString>jdbc:mysql://127.0.0.1:3306/sys?user=root&amp;password=PASS_VALUE</con:connectionString>
@@ -110,6 +110,10 @@ Where sys_config.variable = 'statement_truncate_len'</con:query>
       </con:assertion>
       <con:properties/>
     </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer-test2-to-delete-later" id="69564168-9c97-4518-ac2b-860749b09829">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep"/>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>

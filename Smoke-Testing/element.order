@@ -4,4 +4,3 @@ TC003-GetStudentData.xml
 TC004-UpdateStudentData.xml
 Another-StudentFlow.xml
 DataDriven-CreateStudent.xml
-GET-student-DB-Datasource.xml
