@@ -65,6 +65,7 @@ Where sys_config.variable = 'statement_truncate_len'</con:query>
             <con:operator>=</con:operator>
             <con:enabled>false</con:enabled>
             <con:expectedValue>0</con:expectedValue>
+            <con:hasValue>false</con:hasValue>
             <con:numberType>false</con:numberType>
           </con:elements>
           <con:elements>
@@ -74,6 +75,7 @@ Where sys_config.variable = 'statement_truncate_len'</con:query>
             <con:operator>=</con:operator>
             <con:enabled>false</con:enabled>
             <con:expectedValue>1</con:expectedValue>
+            <con:hasValue>false</con:hasValue>
             <con:numberType>false</con:numberType>
           </con:elements>
           <con:elements>
@@ -83,6 +85,7 @@ Where sys_config.variable = 'statement_truncate_len'</con:query>
             <con:operator>=</con:operator>
             <con:enabled>false</con:enabled>
             <con:expectedValue>statement_truncate_len</con:expectedValue>
+            <con:hasValue>false</con:hasValue>
             <con:numberType>false</con:numberType>
           </con:elements>
           <con:elements>
@@ -92,6 +95,7 @@ Where sys_config.variable = 'statement_truncate_len'</con:query>
             <con:operator>=</con:operator>
             <con:enabled>true</con:enabled>
             <con:expectedValue>64</con:expectedValue>
+            <con:hasValue>false</con:hasValue>
             <con:numberType>false</con:numberType>
           </con:elements>
           <con:originalMessage><![CDATA[<Results>
