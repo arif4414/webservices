@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:testCase xmlns:con="http://eviware.com/soapui/config" id="23df2452-9d04-469b-8d9f-b51cbab361d4" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="E2E-StudentFlow" searchProperties="true" timeout="0">
-  <con:settings id="7b447bb9-44f6-45e2-9f18-a99e8f51c7da">
+  <con:settings id="f8368442-6e8f-468e-9649-a941bac698ee">
     <con:setting id="23df2452-9d04-469b-8d9f-b51cbab361d4fileName">E2E-StudentFlow</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="POST-AddStudent" id="05a7945f-f039-42a9-8f38-1331b5d575f3">

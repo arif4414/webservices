@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:testCase xmlns:con="http://eviware.com/soapui/config" id="f7cbdf60-5a4e-4579-a6dc-17c03b134b8c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Another-StudentFlow" searchProperties="true" timeout="0">
-  <con:settings id="69c14eac-fc2e-4cf4-90ef-55b03384a072">
+  <con:settings id="927950ab-d633-4756-8783-1e3e41cd1c81">
     <con:setting id="f7cbdf60-5a4e-4579-a6dc-17c03b134b8cfileName">Another-StudentFlow</con:setting>
   </con:settings>
   <con:testStep type="calltestcase" name="Run Test Case" id="08da8d7e-026a-45d0-8c01-1429609e7aba">

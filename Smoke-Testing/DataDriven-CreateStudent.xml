@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:testCase xmlns:con="http://eviware.com/soapui/config" id="f81b0798-3b74-458f-970c-a642aca1480e" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="DataDriven-CreateStudent" searchProperties="true" timeout="0">
-  <con:settings id="73f76502-a333-4170-bb58-c25641d8b998">
+  <con:settings id="7d526ca8-80ca-457b-99a9-fe9b49b2fef1">
     <con:setting id="f81b0798-3b74-458f-970c-a642aca1480efileName">DataDriven-CreateStudent</con:setting>
   </con:settings>
   <con:testStep type="datasource" name="Data Source" id="5a84e08a-5576-4e64-bb9d-715bd9f7c2a8">

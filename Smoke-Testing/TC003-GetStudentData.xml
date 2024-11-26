@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="4623fc19-7db3-41d6-a91e-d8f6c9e6dede" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC003-GetStudentData" searchProperties="true" timeout="0">
-  <con:settings id="8e1abec2-8666-4adc-98e0-512c8789d1ab">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="4623fc19-7db3-41d6-a91e-d8f6c9e6dede" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC003-GetStudentData" searchProperties="true" timeout="0">
+  <con:settings id="e50199bb-feb4-400b-a32e-60e87b419a9f">
     <con:setting id="4623fc19-7db3-41d6-a91e-d8f6c9e6dedefileName">TC003-GetStudentData</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="REST Request" id="d55e2ae3-759c-4193-b1e9-49cd729dd14c">
     <con:settings/>
-    <con:config service="GET-StudentData" resourcePath="/api/studentsDetails/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="GET-StudentData" resourcePath="/api/studentsDetails/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="REST Request" id="d1655c1c-3bdf-4463-bc20-bb93d5edcc45" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -45,7 +45,7 @@
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
-    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true">
       <con:dbConnectionName>TX-DB-Conn</con:dbConnectionName>
       <con:driver>com.mysql.jdbc.Driver</con:driver>
       <con:connectionString>jdbc:mysql://127.0.0.1:3306/sys?user=root&amp;password=PASS_VALUE</con:connectionString>
@@ -65,6 +65,7 @@ Where sys_config.variable = 'statement_truncate_len'</con:query>
             <con:operator>=</con:operator>
             <con:enabled>false</con:enabled>
             <con:expectedValue>0</con:expectedValue>
+            <con:hasValue>false</con:hasValue>
             <con:numberType>false</con:numberType>
           </con:elements>
           <con:elements>
@@ -74,6 +75,7 @@ Where sys_config.variable = 'statement_truncate_len'</con:query>
             <con:operator>=</con:operator>
             <con:enabled>false</con:enabled>
             <con:expectedValue>1</con:expectedValue>
+            <con:hasValue>false</con:hasValue>
             <con:numberType>false</con:numberType>
           </con:elements>
           <con:elements>
@@ -83,6 +85,7 @@ Where sys_config.variable = 'statement_truncate_len'</con:query>
             <con:operator>=</con:operator>
             <con:enabled>false</con:enabled>
             <con:expectedValue>statement_truncate_len</con:expectedValue>
+            <con:hasValue>false</con:hasValue>
             <con:numberType>false</con:numberType>
           </con:elements>
           <con:elements>
@@ -92,6 +95,7 @@ Where sys_config.variable = 'statement_truncate_len'</con:query>
             <con:operator>=</con:operator>
             <con:enabled>true</con:enabled>
             <con:expectedValue>64</con:expectedValue>
+            <con:hasValue>false</con:hasValue>
             <con:numberType>false</con:numberType>
           </con:elements>
           <con:originalMessage><![CDATA[<Results>

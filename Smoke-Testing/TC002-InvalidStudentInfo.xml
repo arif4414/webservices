@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:testCase xmlns:con="http://eviware.com/soapui/config" id="6a5c58bd-5a9b-4ef7-a482-122fb2b96a64" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC002-InvalidStudentInfo" searchProperties="true" timeout="0" disabled="true">
-  <con:settings id="0328d4f0-1221-4e81-9d13-2db13bf81d40">
+  <con:settings id="63ec4122-f774-4c7f-a684-9ae442da57e6">
     <con:setting id="6a5c58bd-5a9b-4ef7-a482-122fb2b96a64fileName">TC002-InvalidStudentInfo</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="InvalidStudent" id="453e9e85-afa9-4097-ae51-e759e983e0f0">

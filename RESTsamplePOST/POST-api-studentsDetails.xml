@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="POST-api-studentsDetails" path="/api/studentsDetails" id="890d4262-6f2a-4a0b-8039-7d4869450df7">
-  <con:settings id="1bfa0148-140a-4566-a856-ff9972573c4f">
+  <con:settings id="f7a162b1-b0e8-49cb-a6c6-a1d9262c7fe4">
     <con:setting id="890d4262-6f2a-4a0b-8039-7d4869450df7fileName">POST-api-studentsDetails</con:setting>
   </con:settings>
   <con:parameters/>

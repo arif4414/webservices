@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="{id}" path="api/studentsDetails/{id}" id="c8eb54db-6838-497e-80ed-cd406e38778c">
-  <con:settings id="257f7619-f8a7-41f0-90d9-28721040cebe">
+  <con:settings id="f7c3956d-b7ea-4f6b-851a-cb33f89c0f2b">
     <con:setting id="c8eb54db-6838-497e-80ed-cd406e38778cfileName">%7Bid%7D</con:setting>
   </con:settings>
   <con:parameters>
