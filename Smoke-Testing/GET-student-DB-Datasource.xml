@@ -84,6 +84,10 @@ From temp_student_id</query>
       <discardResults>true</discardResults>
     </con:config>
   </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer-temp-git-branch-testing" id="c4f06db1-5c17-4cd6-b81c-d753f2c0c97b">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep"/>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
